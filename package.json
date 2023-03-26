@@ -1,0 +1,67 @@
+{
+  "name": "computer-algebra-system",
+  "version": "1.0.0",
+  "description": "a step by step math solver",
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yakubu234/computer-algebra-system.git"
+  },
+  "keywords": [
+    "a",
+    "step",
+    "by",
+    "step",
+    "math",
+    "solver",
+    "This",
+    "application",
+    "is",
+    "capable",
+    "of",
+    "solving",
+    "equations",
+    "like:",
+    "7x",
+    "-",
+    "2",
+    "=",
+    "21",
+    "2(4x",
+    "+",
+    "3)",
+    "+",
+    "6",
+    "=",
+    "24",
+    "-4x",
+    "with",
+    "a",
+    "step",
+    "by",
+    "step",
+    "approach",
+    "of",
+    "the",
+    "solution"
+  ],
+  "author": "Abiola Yakubu",
+  "license": "ISC",
+  "dependencies": {
+    "mathsteps": "^0.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "ioredis": "^5.3.1",
+    "body-parser": "^1.20.1",
+    "express-validator": "^6.14.2",
+    "nodemon": "^2.0.22"
+  },
+  "bugs": {
+    "url": "https://github.com/yakubu234/computer-algebra-system/issues"
+  },
+  "homepage": "https://github.com/yakubu234/computer-algebra-system#readme"
+}
