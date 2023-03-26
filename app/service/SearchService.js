@@ -38,10 +38,48 @@ async function search(req, res, next) {
 function compute(equation) {
     try {
         const steps = mathsteps.solveEquation(equation);
+        return steps;
+        let ans = {};
+
+        steps.forEach(step => {
+            ans = {
+                before_change: step.oldEquation.ascii(),
+                change_type: step.changeType,
+                after_change: step.newEquation.ascii(),
+                number_of_substeps: step.substeps.length
+            }
+
+            if (step.substeps.length > 0) {
+                step.substeps.forEach(step => {
+                    ans = {
+                        step_1: {
+                            subset_before_change: step.oldEquation.ascii(),
+                            subset_change: step.changeType,
+                            subset_after_change: step.newEquation.ascii(),
+                            subset__of_substeps: step.substeps.length
+                        }
+                    }
+
+                    if (step.substeps.length > 0) {
+                        step.substeps.forEach(step => {
+                            ans = {
+                                step_2: {
+                                    subset_before_change: step.oldEquation.ascii(),
+                                    subset_change: step.changeType,
+                                    subset_after_change: step.newEquation.ascii(),
+                                    subset__of_substeps: step.substeps.length
+                                }
+                            }
+                        })
+
+                    }
+                })
+            }
+        });
 
         try {
-            setCache(base64_encode(equation), steps);
-            return steps;
+            setCache(base64_encode(equation), ans);
+            return ans;
         } catch (error) {
             return false;
         }

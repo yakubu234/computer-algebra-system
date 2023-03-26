@@ -1,5 +1,10 @@
 function searchFunction() {
     var input, filter, ul, li, a, i, txtValue;
+
+    var spinner = document.getElementById('spinner')
+    spinner.classList.toggle("spinner");
+
+
     input = document.getElementById('myInput');
     filter = input.value;
     data = {
@@ -12,6 +17,9 @@ function searchFunction() {
     client.get(location.origin + '/search', data, null, (response) => {
         var response = JSON.stringify(response)
         console.log(response)
+
+        spinner.classList.toggle("spinner");
+
 
         if (response.errors) {
             d = response.errors
@@ -39,21 +47,6 @@ function searchFunction() {
 
 
 }
-
-
-
-function serializeForm(form) {
-    let rawData = new FormData(form);
-    let data = {};
-
-    for (let pair of rawData.entries()) {
-        data[pair[0]] = pair[1];
-    }
-
-    // data['_token'] = csrf
-    return JSON.stringify(data);
-}
-
 
 // Accordion Function
 $(function () {
