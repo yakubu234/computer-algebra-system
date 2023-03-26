@@ -1,13 +1,57 @@
 function searchFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    alert('we are here')
+    filter = input.value;
+    data = {
+        search_key: filter
+    }
+
+    data = JSON.stringify(data)
+
+    var client = new HttpClientPost();
+    client.get(location.origin + '/search', data, null, (response) => {
+        var response = JSON.stringify(response)
+        console.log(response)
+
+        if (response.errors) {
+            d = response.errors
+            Object.keys(d).forEach(key => {// console.log(key, d[key]);
+
+            });
+        }
+
+        if (response.status == 'Error') {
+            //show error if theres error message
+        }
+
+        if (response.status == 'Success') {
+
+            response.message//display this message
+            var data = response.data
+            input.reset()
+        }
+
+
+    });
 
     // document.querySelector('.Messages_list').innerHTML += '<div class="msg user" style="margin-bottom:30px;"><span class="avtr"><figure style="background-image: url(https://mrseankumar25.github.io/Sandeep-Kumar-Frontend-Developer-UI-Specialist/images/avatar.png)"></figure></span><span class="responsText">' +
     //     msg + "<span class='chat-timestamp'><b>You</b> - Today " + time + "</span></span></div>";
 
 
+}
+
+
+
+function serializeForm(form) {
+    let rawData = new FormData(form);
+    let data = {};
+
+    for (let pair of rawData.entries()) {
+        data[pair[0]] = pair[1];
+    }
+
+    // data['_token'] = csrf
+    return JSON.stringify(data);
 }
 
 
