@@ -9,7 +9,10 @@ global.__basedir = require('path').resolve('./');
 /** parse the dot env and get the port */
 require('dotenv').config({ path: __basedir + '/env/.env' })
 
+// a request validator for the payload
 const RequestValidator = require(__basedir + "/app/middleware/RequestValidator");
+
+const SearchService = require(__basedir + '/app/service/SearchService');
 
 const { PORT, ALLOWED_ORIGIN } = process.env;
 // var allowed_origin = ALLOWED_ORIGIN;
@@ -41,9 +44,8 @@ app.get('/', (req, res) => {
 
 
 //the search endpoints that hits the SearchService
-app.post('/search', RequestValidator.search, (req, res, next) => {
-    // call the library here
-
+app.post('/search', RequestValidator.search, (req, res) => {
+    return SearchService.search(req, res);
 });
 
 /** catch all routes that are not defined and send response */
