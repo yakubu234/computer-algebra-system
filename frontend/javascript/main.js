@@ -45,31 +45,37 @@ function searchFunction() {
             var data = response.data  //the data passed in the data field
 
             var html = "";
+            const pattern = /^[`!@#$%^&*()[\]\s_+\-=\[\]{};':"\\|,.<>\/?~\d]*$/g;
             Object.entries(data).forEach(([key, value]) => {
+
                 //first step
                 var steps = key.replace(/_/g, " ");
                 var changeType = data[key].change_type.replace(/_/g, " ");
 
+                var key_1 = key.match(/\d+/)[0] // get the valid integer from the whole string
+                var new_key_1 = key.split(key_1).join((key_1 - 1)) // replace the integer value to -1 of the initial
+
+                console.log(key_1)
                 // the open and close button
                 html += '<button class="accordion" onclick="accordion()"  >';
                 html += "<span style='color:red;'>" + steps + "</span> : " + changeType + '</button>';
 
+
                 //the contents opening div
                 html += '<div class="accordion-content"><p>';
-                var question = (key === 0 ? input : data[key].before_change)
+                var question = (parseInt(key_1) === 1 ? filter : ((data[key].before_change.match(pattern)) ? data[key].before_change : data[new_key_1].after_change))
+
+
                 html += '<p> `' + `${question}` + '` </p>';
 
                 console.log(`${key}: ${value}`)
-                console.log(data[key])
+
+                //peform the sub query stuff here
 
 
-                // + data[key].number_of_substeps +
+                html += '<p> `' + `${data[key].after_change}` + '` </p>';// answer
 
-                // answer
-                var answer = (key === Object.keys(data).length - 1 ? data[key].before_change : data[key].after_change)
-                html += '<p> `' + `${answer}` + '` </p>';
-                // the contents closing div
-                html += ' </p></div>';
+                html += ' </p></div>'; // the contents closing div
             });
 
 
