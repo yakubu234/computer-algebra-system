@@ -1,5 +1,15 @@
 function searchFunction() {
     var input, filter, ul, li, a, i, txtValue;
+
+
+    //clear any child element that has been added
+    document.querySelector('.container-ull').clearContent();
+
+    // the spinner when searh params are submitted
+    var spinner = document.getElementById('spinner')
+    spinner.classList.toggle("spinner");
+
+
     input = document.getElementById('myInput');
     filter = input.value;
     data = {
@@ -10,53 +20,103 @@ function searchFunction() {
 
     var client = new HttpClientPost();
     client.get(location.origin + '/search', data, null, (response) => {
-        var response = JSON.stringify(response)
         console.log(response)
 
+        spinner.classList.toggle("spinner");
+
+
         if (response.errors) {
+            console.log('validation')
             d = response.errors
             Object.keys(d).forEach(key => {// console.log(key, d[key]);
 
             });
         }
 
-        if (response.status == 'Error') {
+
+        if (response.status == 'error') {
+            var message = response.message
+            console.log('error')
+
             //show error if theres error message
         }
 
-        if (response.status == 'Success') {
+        if (response.status == 'success') {
+            var data = response.data  //the data passed in the data field
 
-            response.message//display this message
-            var data = response.data
-            input.reset()
+            var html = "";
+            const pattern = /^[`!@#$%^&*()[\]\s_+\-=\[\]{};':"\\|,.<>\/?~\d]*$/g;
+            Object.entries(data).forEach(([key, value]) => {
+
+                //first step
+                var steps = key.replace(/_/g, " ");
+                var changeType = data[key].change_type.replace(/_/g, " ");
+
+                var key_1 = key.match(/\d+/)[0] // get the valid integer from the whole string
+                var new_key_1 = key.split(key_1).join((key_1 - 1)) // replace the integer value to -1 of the initial
+
+                console.log(key_1)
+                // the open and close button
+                html += '<button class="accordion" onclick="accordion()"  >';
+                html += "<span style='color:red;'>" + steps + "</span> : " + changeType + '</button>';
+
+
+                //the contents opening div
+                html += '<div class="accordion-content"><p>';
+                var question = (parseInt(key_1) === 1 ? filter : ((data[key].before_change.match(pattern)) ? data[key].before_change : data[new_key_1].after_change))
+
+
+                html += '<p> `' + `${question}` + '` </p>';
+
+                console.log(`${key}: ${value}`)
+
+                //peform the sub query stuff here
+
+
+                html += '<p> `' + `${data[key].after_change}` + '` </p>';// answer
+
+                html += ' </p></div>'; // the contents closing div
+            });
+
+
+            //append the dynamically generated html to the parent node
+            document.querySelector('.container-ull').htmlContent(html);
+
+            MathJax.typeset();
+
+            html = ''; //set html to empty on the page
+
+            accordion(); // performthe auto open and listings 
+
+            var message = response.message
+
+            input.value = ""
         }
 
 
     });
 
-    // document.querySelector('.Messages_list').innerHTML += '<div class="msg user" style="margin-bottom:30px;"><span class="avtr"><figure style="background-image: url(https://mrseankumar25.github.io/Sandeep-Kumar-Frontend-Developer-UI-Specialist/images/avatar.png)"></figure></span><span class="responsText">' +
-    //     msg + "<span class='chat-timestamp'><b>You</b> - Today " + time + "</span></span></div>";
-
-
 }
 
+function lastArray(array) {
+    var keys = Object.keys(array);
+    return keys[keys.length - 1];
+}
 
+// append the dynamically generated html to the parent node
+HTMLElement.prototype.htmlContent = function (html) {
+    var dom = new DOMParser().parseFromString(html, 'text/html').body;
+    while (dom.hasChildNodes()) this.appendChild(dom.firstChild);
+}
 
-function serializeForm(form) {
-    let rawData = new FormData(form);
-    let data = {};
-
-    for (let pair of rawData.entries()) {
-        data[pair[0]] = pair[1];
-    }
-
-    // data['_token'] = csrf
-    return JSON.stringify(data);
+// remove the dynamically generated html from the parent node
+HTMLElement.prototype.clearContent = function () {
+    while (this.hasChildNodes()) this.removeChild(this.lastChild);
 }
 
 
 // Accordion Function
-$(function () {
+function accordion() {
 
     const accordionBtns = document.querySelectorAll(".accordion");
 
@@ -91,7 +151,7 @@ $(function () {
         };
     });
 
-});
+}
 
 
 
