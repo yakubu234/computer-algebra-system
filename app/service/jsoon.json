@@ -1,0 +1,788 @@
+{
+    "status": "success cache",
+    "message": "equation solved successfully",
+    "data": [
+        {
+            "changeType": "ADD_TO_BOTH_SIDES",
+            "oldEquation": {
+                "leftNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "implicit": true,
+                            "op": "*",
+                            "fn": "multiply",
+                            "args": [
+                                {
+                                    "value": "7",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "name": "x"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "-2",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "value": "21",
+                    "valueType": "number"
+                },
+                "comparator": "="
+            },
+            "newEquation": {
+                "leftNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "content": {
+                                "implicit": false,
+                                "op": "+",
+                                "fn": "add",
+                                "args": [
+                                    {
+                                        "implicit": true,
+                                        "op": "*",
+                                        "fn": "multiply",
+                                        "args": [
+                                            {
+                                                "value": "7",
+                                                "valueType": "number"
+                                            },
+                                            {
+                                                "name": "x"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "-2",
+                                        "valueType": "number"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number",
+                            "changeGroup": 1
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "value": "21",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number",
+                            "changeGroup": 1
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "substeps": []
+        },
+        {
+            "changeType": "SIMPLIFY_LEFT_SIDE",
+            "oldEquation": {
+                "leftNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "content": {
+                                "implicit": false,
+                                "op": "+",
+                                "fn": "add",
+                                "args": [
+                                    {
+                                        "implicit": true,
+                                        "op": "*",
+                                        "fn": "multiply",
+                                        "args": [
+                                            {
+                                                "value": "7",
+                                                "valueType": "number"
+                                            },
+                                            {
+                                                "name": "x"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "-2",
+                                        "valueType": "number"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "value": "21",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "newEquation": {
+                "leftNode": {
+                    "implicit": true,
+                    "op": "*",
+                    "fn": "multiply",
+                    "args": [
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        },
+                        {
+                            "name": "x"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "value": "21",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "substeps": [
+                {
+                    "changeType": "COLLECT_AND_COMBINE_LIKE_TERMS",
+                    "oldEquation": {
+                        "leftNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "implicit": true,
+                                    "op": "*",
+                                    "fn": "multiply",
+                                    "args": [
+                                        {
+                                            "value": "7",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "name": "x"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "-2",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "value": "2",
+                                    "valueType": "number"
+                                }
+                            ],
+                            "changeGroup": 1
+                        },
+                        "rightNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "value": "21",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "value": "2",
+                                    "valueType": "number"
+                                }
+                            ]
+                        },
+                        "comparator": "="
+                    },
+                    "newEquation": {
+                        "leftNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "implicit": true,
+                                    "op": "*",
+                                    "fn": "multiply",
+                                    "args": [
+                                        {
+                                            "value": "7",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "name": "x"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "0",
+                                    "valueType": "number"
+                                }
+                            ],
+                            "changeGroup": 1
+                        },
+                        "rightNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "value": "21",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "value": "2",
+                                    "valueType": "number"
+                                }
+                            ]
+                        },
+                        "comparator": "="
+                    },
+                    "substeps": [
+                        {
+                            "changeType": "COLLECT_LIKE_TERMS",
+                            "oldEquation": {
+                                "leftNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "implicit": true,
+                                            "op": "*",
+                                            "fn": "multiply",
+                                            "args": [
+                                                {
+                                                    "value": "7",
+                                                    "valueType": "number"
+                                                },
+                                                {
+                                                    "name": "x"
+                                                }
+                                            ],
+                                            "changeGroup": 1
+                                        },
+                                        {
+                                            "value": "-2",
+                                            "valueType": "number",
+                                            "changeGroup": 2
+                                        },
+                                        {
+                                            "value": "2",
+                                            "valueType": "number",
+                                            "changeGroup": 2
+                                        }
+                                    ]
+                                },
+                                "rightNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "value": "21",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "value": "2",
+                                            "valueType": "number"
+                                        }
+                                    ]
+                                },
+                                "comparator": "="
+                            },
+                            "newEquation": {
+                                "leftNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "implicit": true,
+                                            "op": "*",
+                                            "fn": "multiply",
+                                            "args": [
+                                                {
+                                                    "value": "7",
+                                                    "valueType": "number"
+                                                },
+                                                {
+                                                    "name": "x"
+                                                }
+                                            ],
+                                            "changeGroup": 1
+                                        },
+                                        {
+                                            "content": {
+                                                "implicit": false,
+                                                "op": "+",
+                                                "fn": "add",
+                                                "args": [
+                                                    {
+                                                        "value": "-2",
+                                                        "valueType": "number"
+                                                    },
+                                                    {
+                                                        "value": "2",
+                                                        "valueType": "number"
+                                                    }
+                                                ]
+                                            },
+                                            "changeGroup": 2
+                                        }
+                                    ]
+                                },
+                                "rightNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "value": "21",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "value": "2",
+                                            "valueType": "number"
+                                        }
+                                    ]
+                                },
+                                "comparator": "="
+                            },
+                            "substeps": []
+                        },
+                        {
+                            "changeType": "SIMPLIFY_ARITHMETIC",
+                            "oldEquation": {
+                                "leftNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "implicit": true,
+                                            "op": "*",
+                                            "fn": "multiply",
+                                            "args": [
+                                                {
+                                                    "value": "7",
+                                                    "valueType": "number"
+                                                },
+                                                {
+                                                    "name": "x"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "implicit": false,
+                                            "op": "+",
+                                            "fn": "add",
+                                            "args": [
+                                                {
+                                                    "value": "-2",
+                                                    "valueType": "number"
+                                                },
+                                                {
+                                                    "value": "2",
+                                                    "valueType": "number"
+                                                }
+                                            ],
+                                            "changeGroup": 1
+                                        }
+                                    ]
+                                },
+                                "rightNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "value": "21",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "value": "2",
+                                            "valueType": "number"
+                                        }
+                                    ]
+                                },
+                                "comparator": "="
+                            },
+                            "newEquation": {
+                                "leftNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "implicit": true,
+                                            "op": "*",
+                                            "fn": "multiply",
+                                            "args": [
+                                                {
+                                                    "value": "7",
+                                                    "valueType": "number"
+                                                },
+                                                {
+                                                    "name": "x"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "0",
+                                            "valueType": "number",
+                                            "changeGroup": 1
+                                        }
+                                    ]
+                                },
+                                "rightNode": {
+                                    "implicit": false,
+                                    "op": "+",
+                                    "fn": "add",
+                                    "args": [
+                                        {
+                                            "value": "21",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "value": "2",
+                                            "valueType": "number"
+                                        }
+                                    ]
+                                },
+                                "comparator": "="
+                            },
+                            "substeps": []
+                        }
+                    ]
+                },
+                {
+                    "changeType": "REMOVE_ADDING_ZERO",
+                    "oldEquation": {
+                        "leftNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "implicit": true,
+                                    "op": "*",
+                                    "fn": "multiply",
+                                    "args": [
+                                        {
+                                            "value": "7",
+                                            "valueType": "number"
+                                        },
+                                        {
+                                            "name": "x"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "0",
+                                    "valueType": "number"
+                                }
+                            ],
+                            "changeGroup": 1
+                        },
+                        "rightNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "value": "21",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "value": "2",
+                                    "valueType": "number"
+                                }
+                            ]
+                        },
+                        "comparator": "="
+                    },
+                    "newEquation": {
+                        "leftNode": {
+                            "implicit": true,
+                            "op": "*",
+                            "fn": "multiply",
+                            "args": [
+                                {
+                                    "value": "7",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "name": "x"
+                                }
+                            ],
+                            "changeGroup": 1
+                        },
+                        "rightNode": {
+                            "implicit": false,
+                            "op": "+",
+                            "fn": "add",
+                            "args": [
+                                {
+                                    "value": "21",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "value": "2",
+                                    "valueType": "number"
+                                }
+                            ]
+                        },
+                        "comparator": "="
+                    },
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "changeType": "SIMPLIFY_ARITHMETIC",
+            "oldEquation": {
+                "leftNode": {
+                    "implicit": true,
+                    "op": "*",
+                    "fn": "multiply",
+                    "args": [
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        },
+                        {
+                            "name": "x"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "+",
+                    "fn": "add",
+                    "args": [
+                        {
+                            "value": "21",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "2",
+                            "valueType": "number"
+                        }
+                    ],
+                    "changeGroup": 1
+                },
+                "comparator": "="
+            },
+            "newEquation": {
+                "leftNode": {
+                    "implicit": true,
+                    "op": "*",
+                    "fn": "multiply",
+                    "args": [
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        },
+                        {
+                            "name": "x"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "value": "23",
+                    "valueType": "number",
+                    "changeGroup": 1
+                },
+                "comparator": "="
+            },
+            "substeps": []
+        },
+        {
+            "changeType": "DIVIDE_FROM_BOTH_SIDES",
+            "oldEquation": {
+                "leftNode": {
+                    "implicit": true,
+                    "op": "*",
+                    "fn": "multiply",
+                    "args": [
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        },
+                        {
+                            "name": "x"
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "value": "23",
+                    "valueType": "number"
+                },
+                "comparator": "="
+            },
+            "newEquation": {
+                "leftNode": {
+                    "implicit": false,
+                    "op": "/",
+                    "fn": "divide",
+                    "args": [
+                        {
+                            "content": {
+                                "implicit": true,
+                                "op": "*",
+                                "fn": "multiply",
+                                "args": [
+                                    {
+                                        "value": "7",
+                                        "valueType": "number"
+                                    },
+                                    {
+                                        "name": "x"
+                                    }
+                                ],
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "value": "7",
+                            "valueType": "number",
+                            "changeGroup": 1
+                        }
+                    ]
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "/",
+                    "fn": "divide",
+                    "args": [
+                        {
+                            "value": "23",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "7",
+                            "valueType": "number",
+                            "changeGroup": 1
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "substeps": []
+        },
+        {
+            "changeType": "SIMPLIFY_FRACTION",
+            "oldEquation": {
+                "leftNode": {
+                    "implicit": false,
+                    "op": "/",
+                    "fn": "divide",
+                    "args": [
+                        {
+                            "implicit": true,
+                            "op": "*",
+                            "fn": "multiply",
+                            "args": [
+                                {
+                                    "value": "7",
+                                    "valueType": "number"
+                                },
+                                {
+                                    "name": "x"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        }
+                    ],
+                    "changeGroup": 1
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "/",
+                    "fn": "divide",
+                    "args": [
+                        {
+                            "value": "23",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "newEquation": {
+                "leftNode": {
+                    "name": "x",
+                    "changeGroup": 1
+                },
+                "rightNode": {
+                    "implicit": false,
+                    "op": "/",
+                    "fn": "divide",
+                    "args": [
+                        {
+                            "value": "23",
+                            "valueType": "number"
+                        },
+                        {
+                            "value": "7",
+                            "valueType": "number"
+                        }
+                    ]
+                },
+                "comparator": "="
+            },
+            "substeps": []
+        }
+    ]
+}

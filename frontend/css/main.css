@@ -144,12 +144,6 @@ button.accordion.is-open {
     transition: max-height 0.2s ease-in-out;
 }
 
-
-
-
-
-
-
 .spinner {
     width: 25px;
     height: 25px;
