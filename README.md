@@ -111,6 +111,38 @@ Right here, you’ll get a json response.
 ```"jest": "^29.5.0"```<br>
 ```"supertest": "^6.3.3```<br>
 
+```NB: the system used redis to cache a successful searched equations to be retrieved when such equation are searched in the future for effective read speed```
+
+### folder structure are as below
+
+```b ash
+├── app
+│   ├── middleware
+│   │   └── RequestValidator.js
+│   └── service
+│       ├── Caching.js
+│       └── SearchService.js
+├── env
+├── frontend
+│   ├── css
+│   │   └── main.css
+│   ├── index.html
+│   ├── javascript
+│   │   ├── HttpRequest.js
+│   │   ├── main.js
+│   │   ├── startup.js
+│   │   └── tex-chtml.js
+│   └── README.md
+├── LICENSE
+├── math.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── test
+    ├── search.failled.test.js
+    └── search.passed.test.js
+```
+
 # Credits due where credits due…
 
 Thanks to [foondamate](https://careers.foondamate.com/) for giving me the opportunity to showcase my skill [Github Link](https://github.com/yakubu234/computer-algebra-system.git).
