@@ -139,7 +139,7 @@ button.accordion.is-open {
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
     padding: 0 20px;
-    max-height: 0;
+    min-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
 }
@@ -167,4 +167,106 @@ button.accordion.is-open {
     100% {
         transform: rotate(360deg)
     }
+}
+
+
+.accordion-two .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion-two .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #03b5d2;
+}
+
+.accordion-two button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.accordion-two button:hover,
+.accordion-two button:focus {
+    cursor: pointer;
+    color: #03b5d2;
+}
+
+.accordion-two button:hover::after,
+.accordion-two button:focus::after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+}
+
+.accordion-two button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+}
+
+.accordion-two button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.accordion-two button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.accordion-two button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.accordion-two button[aria-expanded='true'] {
+    color: #03b5d2;
+}
+
+.accordion-two button[aria-expanded='true'] .icon::after {
+    width: 0;
+}
+
+.accordion-two button[aria-expanded='true']+.accordion-content-two {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion-two .accordion-content-two {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion-two .accordion-content-two p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
 }
