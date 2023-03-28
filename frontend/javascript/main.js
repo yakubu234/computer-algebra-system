@@ -55,7 +55,6 @@ function searchFunction() {
                 var key_1 = key.match(/\d+/)[0] // get the valid integer from the whole string
                 var new_key_1 = key.split(key_1).join((key_1 - 1)) // replace the integer value to -1 of the initial
 
-                console.log(key_1)
                 // the open and close button
                 html += '<button class="accordion" onclick="accordion()"  >';
                 html += "<span style='color:red;'>" + steps + "</span> : " + changeType + '</button>';
@@ -67,8 +66,23 @@ function searchFunction() {
 
 
                 html += '<p> `' + `${question}` + '` </p>';
+                let sub_step = []
 
-                console.log(`${key}: ${value}`)
+                // if (data[key].number_of_substeps > 0) {
+                //     sub_step.push(data[key].indexOf('sub_step_') !== -1)
+
+                // && /.*sub_step_.*/.test(data[key])
+                // console.log(sub_step)
+                //     Object.entries(sub_step).forEach(([key_1, value_1]) => {
+                //         console.log(`${key_1}`)
+                //         // console.log(`${key_1}: ${value_1}`)
+                //         // console.log(sub_step[key][key_1])
+                //     });
+
+                // }
+
+                // console.log(`${key}: ${value}`)
+                // console.log(data[key])
 
                 //peform the sub query stuff here
 
@@ -128,7 +142,7 @@ function accordion() {
             let content = accordion.nextElementSibling;
 
             if (content.style.maxHeight) {
-                content.style.maxHeight = null;
+                content.style.maxHeight = (500 + content.scrollHeight) + "px";
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
             }
@@ -139,15 +153,18 @@ function accordion() {
             this.classList.toggle("is-open");
 
             let content = this.nextElementSibling;
-            console.log(content);
+            // console.log(content);
 
             if (content.style.maxHeight) {
                 //this is if the accordion is open
-                content.style.maxHeight = null;
+                content.style.maxHeight = (500 + content.scrollHeight) + "px";
             } else {
                 //if the accordion is currently closed
                 content.style.maxHeight = content.scrollHeight + "px";
             }
+
+            var objDiv = content
+            objDiv.scrollTop = objDiv.scrollHeight;
         };
     });
 
