@@ -4,6 +4,8 @@
 The following documentation is based on FoondaMate Software Engineer Coding Challenge-002 Role<br> <br>
 computer algebra system is a step by step math solver showing how equations are being solved
 
+#### ```this project uses the``` [mathsteps](https://github.com/google/mathsteps) ```and``` [AsciiMath](https://www.sqlpac.com/en/documents/html-equations-math-with-mathjax-asciimath.html) ```Or``` [AsciiMathMl](https://github.com/asciimath/asciimathml) ```library for computation and presentation respectively```
+
 • Author: [Abiola Yakubu](https://github.com/yakubu234) <br>
 • Twitter: [@grandrubicon](https://twitter.com/grandrubicon) <br>
 • Linkedin: [Abiola Yakubu](https://www.linkedin.com/in/abiolayakubu/) <br>
